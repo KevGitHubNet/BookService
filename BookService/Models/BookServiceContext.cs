@@ -8,6 +8,7 @@ namespace BookService.Models
 {
     public class BookServiceContext : DbContext
     {
+        
         // You can add custom code to this file. Changes will not be overwritten.
         // 
         // If you want Entity Framework to drop and regenerate your database
@@ -17,6 +18,9 @@ namespace BookService.Models
     
         public BookServiceContext() : base("name=BookServiceContext")
         {
+
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+
         }
 
         public System.Data.Entity.DbSet<BookService.Models.Author> Authors { get; set; }

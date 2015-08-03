@@ -102,7 +102,7 @@ namespace BookService.Controllers
             return Ok(author);
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)//close database resources to free memory
         {
             if (disposing)
             {
